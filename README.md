@@ -1,7 +1,7 @@
 # VDAS_Project
 This project is Vehicle Damage Assessment System via 3D retrieval
 Pipeline
-![image](https://user-images.githubusercontent.com/68935390/154241479-bf69cc00-799a-4aba-a72d-ee6e297f24a7.png)
+![pic](https://user-images.githubusercontent.com/68935390/154282165-a734bd79-3f40-456d-a4ad-f951583c0d56.PNG)
 How to setup 
 1. Must have anaconda or miniconda
 2. Create an environment according to this order.
