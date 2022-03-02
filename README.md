@@ -1,7 +1,9 @@
 # VDAS_Project
 This project is Vehicle Damage Assessment System via 3D retrieval
-Pipeline
-![pic](https://user-images.githubusercontent.com/68935390/154395642-95d78bd0-5cc3-4fb6-a03c-9688f2310545.PNG)
+Part 1 Upload 3D model
+![Part1](https://user-images.githubusercontent.com/68935390/156372314-04cadd35-cd7c-4a9e-99f1-a78125d0d270.PNG)
+Part 2 Compare 3D models
+![Part2](https://user-images.githubusercontent.com/68935390/156372367-79a64b0c-3794-4b8b-8600-ebfe3d5192d5.PNG)
 How to setup pytorch 3D library
 1. Must have anaconda or miniconda
 2. Create an environment according to this order.
