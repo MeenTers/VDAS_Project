@@ -19,7 +19,7 @@
  4. Finish
 ----------------------------------------------------------------------------------------------------------------------
 ## install openpyxl 
- we use openpyxl for open excel file.  Install with this command "conda install openpyxl" and y for confirm install
+#### we use openpyxl for open excel file.  Install with this command "conda install openpyxl" and y for confirm install
 ----------------------------------------------------------------------------------------------------------------------
 ## How to use this project?
  1. Clone this github "git clone https://github.com/MeenTers/VDAS_Project.git"
