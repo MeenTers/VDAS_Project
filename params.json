@@ -1,0 +1,7 @@
+{
+    "image_size": 256,
+    "camera_dist": 5,   
+    "elevation": [0],
+    "azim_angle": [0,90, 180, 270],
+    "obj_filename": "file/ID1.obj"
+}
