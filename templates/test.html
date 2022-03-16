@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var subjectObject = {
+  "Toyota": ["Yaris","Vios","Altis","C-HR","Camry","Fortuner","Alphard"],
+  "Honda": ["HR-V","Civic","Accord","City(Hatchback)","City","Jazz","CR-V"],
+  "Mazda": ["CX-3","CX-30","CX-5","CX-8","Mazda2","Mazda3"],
+  "MG" : ["EP","HS","MG3","MG5"],
+  "Suzuki": ["Celerio","Claz","Ertiga","Swift","XL7"],
+  "Mitsubishi": ["Attrage","Mirage","Outlander","Pajero Sport","Xpander"],
+  "Nissan": ["Almera","Kicks","Leaf","March","Note","Terra"]
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("namecar");
+  var topicSel = document.getElementById("subnamecar");
+
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    topicSel.length = 1;
+    //display correct values
+    var z = subjectObject[this.value]
+    for (var i = 0; i < z.length; i++) {
+      topicSel.options[topicSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+</head>   
+<body>
+
+<h1>Cascading Dropdown Example</h1>
+
+<form name="form1" id="form1" action="/action_page.php">
+ยี่ห้อรถ: <select name="namecar" id="namecar">
+    <option value="" selected="selected">ยี่ห้อรถ</option>
+  </select>
+  <br><br>
+รุ่นรถ: <select name="subnamecar" id="subnamecar">
+    <option value="" selected="selected">รุ่นรถ</option>
+  </select>
+  <br><br>
+
+  <br><br>
+  <input type="submit" value="Submit">  
+</form>
+
+</body>
+</html>

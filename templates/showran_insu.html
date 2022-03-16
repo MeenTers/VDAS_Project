@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Database 3D Model</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap-4.4.1.css') }}">
+</head>
+  <body style="background-color: #9DAAD8 ;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/homepage">ระบบประเมินความเสียหาย</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"> <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a> </li>
+
+            <li class="nav-item"> <a class="nav-link" href="/index">เริ่มทำประกัน</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="/compare">เคลมประกัน</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="/show">โชว์ข้อมูล</a> </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
+            
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </div>
+      </nav>
+      <div  class="container">
+        <div class="d-flex vh-50">
+        <div style="background-color: #2c2c2c; width: 1400px;  border-radius: 24px; padding: 45px 16px 77px 16px;" class="mx-auto align-self-center">
+        <div class="text-center col-12">
+        <div class="row ">
+            <div class="text-center col-12">
+                <h3 style="color: aliceblue;"> ความเสียหายของรถยนต์ </h3>
+                <hr style="color: rgb(205, 220, 233);"></hr>
+                </div>
+          <div class="col ">
+            {%if outs[0] ==  'N'%}
+            <h5 style="color: aliceblue;"> ด้านหน้าของรถไม่มีความเสียหาย </h5>
+            <h5 style="color: aliceblue;"> ไม่มีค่าซ่อม </h5>
+            {%elif outs[0] == 'L'%}
+            <h5 style="color: aliceblue;"> ด้านหน้าของรถเสียหายระดับเบา </h5>
+            <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[0,1]}} ถึง {{pri[0,2]}} บาท</h5>
+            {%elif outs[0] == 'M'%}
+            <h5 style="color: aliceblue;"> ด้านหน้าของรถเสียหายระดับปานกลาง </h5>
+            <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[0,3]}} ถึง {{pri[0,4]}} บาท</h5>
+            {%elif outs[0] == 'H'%}
+            <h5 style="color: aliceblue;"> ด้านหน้าของรถเสียหายระดับหนัก </h5>
+            <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[0,5]}} ถึง {{pri[0,6]}} บาท</h5>
+            {% endif %}
+            <p><img src={{b1}} alt="คู่มือ11"width="300" height="300"></p>
+
+
+            {%if outs[3] ==  'N'%}
+            <h5 style="color: aliceblue;"> ด้านซ้ายของรถไม่มีความเสียหาย </h5>
+            <h5 style="color: aliceblue;"> ไม่มีค่าซ่อม </h5>
+            {%elif outs[3] == 'L'%}
+            <h5 style="color: aliceblue;"> ด้านซ้ายของรถเสียหายระดับเบา </h5>
+            <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[1,1]}} ถึง {{pri[1,2]}} บาท</h5>
+            {%elif outs[3] == 'M'%}
+            <h5 style="color: aliceblue;"> ด้านซ้ายของรถเสียหายระดับปานกลาง </h5>
+            <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[1,3]}} ถึง {{pri[1,4]}} บาท</h5>
+            {%elif outs[3] == 'H'%}
+            <h5 style="color: aliceblue;"> ด้านซ้ายของรถเสียหายระดับหนัก </h5>
+            <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[1,5]}} ถึง {{pri[1,6]}} บาท</h5>
+            {% endif %}
+            <p><img src={{b2}} alt="คู่มือ11"width="300" height="300"></p>
+        </div>
+            <div class="col align-self-center ">
+              {%if outs[6] ==  'N'%}
+              <h5 style="color: aliceblue;"> ด้านหลังของรถไม่มีความเสียหาย </h5>
+              <h5 style="color: aliceblue;"> ไม่มีค่าซ่อม </h5>
+              {%elif outs[6] == 'L'%}
+              <h5 style="color: aliceblue;"> ด้านหลังของรถเสียหายระดับเบา </h5>
+              <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[2,1]}} ถึง {{pri[2,2]}} บาท</h5>
+              {%elif outs[6] == 'M'%}
+              <h5 style="color: aliceblue;"> ด้านหลังของรถเสียหายระดับปานกลาง </h5>
+              <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[2,3]}} ถึง {{pri[2,4]}} บาท</h5>
+              {%elif outs[6] == 'H'%}
+              <h5 style="color: aliceblue;"> ด้านหลังของรถเสียหายระดับหนัก </h5>
+              <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[2,5]}} ถึง {{pri[2,6]}} บาท</h5>
+              {% endif %}
+            <p><img src={{b3}} alt="คู่มือ11"width="300" height="300"></p>
+
+            {%if outs[9] ==  'N'%}
+            <h5 style="color: aliceblue;"> ด้านขวาของรถไม่มีความเสียหาย </h5>
+            <h5 style="color: aliceblue;"> ไม่มีค่าซ่อม </h5>
+            {%elif outs[9] == 'L'%}
+            <h5 style="color: aliceblue;"> ด้านขวาของรถเสียหายระดับเบา </h5>
+            <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[3,1]}} ถึง {{pri[3,2]}} บาท</h5>
+            {%elif outs[9] == 'M'%}
+            <h5 style="color: aliceblue;"> ด้านขวาของรถเสียหายระดับปานกลาง </h5>
+            <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[3,3]}} ถึง {{pri[3,4]}} บาท</h5>
+            {%elif outs[9] == 'H'%}
+            <h5 style="color: aliceblue;"> ด้านขวาของรถเสียหายระดับหนัก </h5>
+            <h5 style="color: aliceblue;"> ค่าซ่อมประมาณ {{pri[3,5]}} ถึง {{pri[3,6]}} บาท</h5>
+            {% endif %}
+            <p><img src={{b4}} alt="คู่มือ11"width="300" height="300"></p>
+            
+          </div>
+        
+      
+
+          <div class="col align-self-center ">
+            
+            <div class="text-center col-12">
+            <h3 style="color: rgb(214, 233, 250);"> ราคาค่าซ่อมโดยรวม </h3>
+            <hr></hr>
+            </div>
+              <h5 style="color: aliceblue;">ประมาณ{{toa}} ถึง {{tob}} บาท</h5>
+              
+              
+              </div>
+          </div>
+      </div>
+  </div>
+        
+      </div>
+    
+   </body>
+</html>

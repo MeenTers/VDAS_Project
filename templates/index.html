@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- dropdown ยี่ห้อรถ รุ่นรถ -->
+<script>
+    var subjectObject = {
+      "Toyota": ["Yaris","Vios","Altis","C-HR","Camry","Fortuner","Alphard"],
+      "Honda": ["HR-V","Civic","Accord","City(Hatchback)","City","Jazz","CR-V"],
+      "Mazda": ["CX-3","CX-30","CX-5","CX-8","Mazda2","Mazda3"],
+      "MG" : ["EP","HS","MG3","MG5"],
+      "Suzuki": ["Celerio","Claz","Ertiga","Swift","XL7"],
+      "Mitsubishi": ["Attrage","Mirage","Outlander","Pajero Sport","Xpander"],
+      "Nissan": ["Almera","Kicks","Leaf","March","Note","Terra"]
+    }
+    window.onload = function() {
+      var subjectSel = document.getElementById("namecar");
+      var topicSel = document.getElementById("subnamecar");
+    
+      for (var x in subjectObject) {
+        subjectSel.options[subjectSel.options.length] = new Option(x, x);
+      }
+      subjectSel.onchange = function() {
+        //empty Chapters- and Topics- dropdowns
+        topicSel.length = 1;
+        //display correct values
+        var z = subjectObject[this.value]
+        for (var i = 0; i < z.length; i++) {
+          topicSel.options[topicSel.options.length] = new Option(z[i], z[i]);
+        }
+      }
+    }
+  </script>
+    <!-- ------------------------------------------------------------------------- -->
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Database 3D Model</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap-4.4.1.css') }}">
+</head>
+<body style="background-color: #9DAAD8 ;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/homepage">ระบบประเมินความเสียหาย</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"> <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a> </li>
+
+          <li class="nav-item"> <a class="nav-link" href="/index">เริ่มทำประกัน</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="/compare">เคลมประกัน</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="/show">โชว์ข้อมูล</a> </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 mx-auto">
+            <div class="jumbotron">
+              <div class="row text-center">
+                <div class="text-center col-12">
+                  <h2>เริ่มทำประกันภัยรถยนต์</h2>
+                </div>
+                <div class="text-center col-12">
+                  <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
+                  <form action="{{url_for('home')}}"method="post" enctype = "multipart/form-data">
+                    <div class="form-group">
+                      <label for="car_id">ทะเบียนรถ</label>
+                      <input type="text" class="form-control"  name="car_id" placeholder="Car_ID" >
+                      </div>
+                    <div class="form-group">
+                      <label for="fname">ชื่อ</label>
+                      <input type="text" class="form-control"  name="fname" placeholder="ชื่อจริง" >
+                      </div>
+                      <div class="form-group">
+                        <label for="lname">นามสกุล</label>
+                        <input type="text" class="form-control"  name="lname" placeholder="นามสกุล" >
+                        </div>
+                        <div class="form-group">
+                          ยี่ห้อรถ: <select name="namecar" id="namecar">
+                            <option value="" selected="selected">ยี่ห้อรถ</option>
+                          </select>
+                          
+                        รุ่นรถ: <select name="subnamecar" id="subnamecar">
+                            <option value="" selected="selected">รุ่นรถ</option>
+                          </select>
+                          
+                        </div>
+
+                    <div class="form-group">
+                      <label for="insurance">กรมธรรม์  </label>
+                      <!-- <input type="text" class="form-control"  name="insurance" placeholder="กรมธรรม์" > -->
+                      <select  class=" form-select" aria-label="กรมธรรม์" id="insurance" name="insurance">
+                        <option value="ประกันภัยชั้น1">ประกันภัยชั้น1</option>
+                        <option value="ประกันภัยชั้น2">ประกันภัยชั้น2</option>
+                        <option value="ประกันภัยชั้น3">ประกันภัยชั้น3</option>
+                        <option value="ประกันภัยชั้น2+">ประกันภัยชั้น2+</option>
+                        <option value="ประกันภัยชั้น3+">ประกันภัยชั้น3+</option>
+                        <option value="ประกันภัยชั้น4">ประกันภัยชั้น4</option>
+                      </select>
+                      </div>
+
+                        <label for="file">Select a file: 3D model (.obj)</label>
+                        <input type="file" id="file" name="file" multiple><br><br>
+
+                        <p></p>
+                    <button type="submit" class="pull-right btn btn-primary"> ยืนยัน</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>

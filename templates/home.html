@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Database 3D Model</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap-4.4.1.css') }}">
+</head>
+<body style="background-color: #9DAAD8 ;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/homepage">ระบบประเมินความเสียหาย</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"> <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a> </li>
+
+          <li class="nav-item"> <a class="nav-link" href="/index">เริ่มทำประกัน</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="/compare">เคลมประกัน</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="/show">โชว์ข้อมูล</a> </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+      <div  class="container">
+          <div  class="row">
+            <div class="col">
+                <h2>คู่มือการใช้งาน webapp </h2>
+                <p><h4>ถ้าหากต้องการใช้งานคู่มือสำหรับการใช้งานระบบให้กดที่ปุ่ม Home ดังภาพ</h4></p>
+                <p><img src="static\images\to1.jpg" alt="คู่มือ1"width="1200" height="200"></p>
+                <p><h4>หลังจากกดที่ปุ่ม Home แล้วจะแสดงหน้าคู่มือการใช้งานดังภาพตัวอย่าง</h4></p>
+                <p><img src="static\images\to2.png" alt="คู่มือ2"width="1200" height="600"></p>
+                <hr></hr>
+
+                <h2>การเพิ่มข้อมูลในฐานข้อมูล </h2>
+                <p><h4>ถ้าหากต้องการเพิ่มข้อมูลและโมเดล 3 มิติลงในฐานข้อมูลให้ กดที่ปุ่ม Adddata เพื่อไปยังหน้าสำหรับกรอกข้อมูลดังภาพ </h4></p>
+                <p><img src="static\images\to3.jpg" alt="คู่มือ3"width="1200" height="600"></p>
+                <p><h4>เมื่อเข้ามายังหน้า Adddata แล้วให้ทำการกรอกข้อมูลซึ่งประกอบไปด้วย เลขทะเบียนรถยนต์,ชื่อจริง,นามสกุล, และทำการอัปโหลด
+                  ไฟล์โมเดล 3 มิติที่มีนามสกุลไฟล์เป็น (.obj), ไฟล์คุณสมบัติของโมเดล 3 มิติ (.mtl), และไฟล์พื้นผิว (.png,.jpg) เมื่อใส่ข้อมูลครบแล้วให้กดยืนยัน
+                  <p><img src="static\images\to4.png" alt="คู่มือ4"width="1200" height="600"></p>
+                  <p><h4>เมื่อกดยืนยันแล้วระบบจำทำการบันทึกข้อมูล และแปลงโมเดล 3 มิติเป็นภาพ 2 มิติเก็บไว้ในฐานข้อมูล และเมื่อเสร็จแล้วจะเข้าสู่หน้า Showdata ที่จะ
+                    แสดงข้อมูลในฐานข้อมูล </h4></p>
+                    <p><img src="static\images\to5.png" alt="คู่มือ5"width="1200" height="600"></p>
+                <hr></hr>
+
+                <h2>วิธีการดูข้อมูลในฐานข้อมูล </h2>
+                <p><h4>ถ้าหากต้องการดูข้อมูลที่อยู่ในฐานข้อมูลให้กดที่ปุ่ม Showdata เพื่อแสดงข้อมูลในฐานข้อมูลดังภาพ</h4></p>
+                <p><img src="static\images\to6.jpg" alt="คู่มือ6"width="1200" height="600"></p>
+                <h2>วิธีการเพิ่มโมเดลรภ 3 มิติที่เสียหาย </h2>
+                <p><h4>ถ้าหากต้องการเพิ่มโมเดล 3 มิติที่เสียหายให้กดที่ปุ่ม Model_damage_render เพื่อเข้าสู่หน้าสำหรับกรอกข้อมูลดังภาพ</h4></p>
+                <p><img src="static\images\to7.jpg" alt="คู่มือ7"width="1200" height="600"></p>
+                <p><h4>เมื่อเข้ามายังหน้า Model_damage_render แล้วให้ทำการกรอกข้อมูลซึ่งประกอบไปด้วย เลขทะเบียนรถยนต์ และทำการอัปโหลด
+                  ไฟล์โมเดล 3 มิติที่มีนามสกุลไฟล์เป็น (.obj), ไฟล์คุณสมบัติของโมเดล 3 มิติ (.mtl), และไฟล์พื้นผิว (.png,.jpg) เมื่อใส่ข้อมูลครบแล้วให้กดยืนยัน </h4></p>
+                  <p><img src="static\images\to7.png" alt="คู่มือ8"width="1200" height="600"></p>
+                <p><h4>เมื่อกดยืนยันแล้วระบบจำทำการบันทึกข้อมูล และแปลงโมเดล 3 มิติที่เสียหายเป็นภาพ 2 มิติเก็บไว้ในฐานข้อมูล และเมื่อเสร็จแล้วจะเข้าสู่หน้า Showdata ที่จะ
+                    แสดงข้อมูลในฐานข้อมูล </h4></p>
+                <hr></hr>
+
+                <h2>วิธีการประเมินความเสียหาย</h2>
+                <p><h4>ถ้าหากต้องการประเมินความเสียหายให้กดที่ปุ่ม Compare เพื่อเข้าสู่หน้ากรอกข้อมูลดังภาพ</h4></p>
+                <p><img src="static\images\to8.jpg" alt="คู่มือ9"width="1200" height="600"></p>
+                <p><h4>ให้ทำการกรอกข้อมูลซึ่งประกอบไปด้วย เลขทะเบียน และทำการเลือกกรรมธรรม์ หลังจากนั้นจึงกดยืนยัน
+                </h4></p>
+                <p><img src="static\images\to9.png" alt="คู่มือ10"width="1200" height="600"></p>
+                <p><h4>ลังจากนั้นระบบจะทำการประเมินความเสียหาย และจะแสดงเป็นเปอร์เซ็นความเสียหายแต่ละด้าน พร้อมกับความรู้การประกันภัย</h4></p>
+                <p><img src="static\images\to11.png" alt="คู่มือ11"width="1200" height="600"></p>
+               
+
+                </div>
+            </div>
+      </div>
+</body>
+</html>
