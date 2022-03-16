@@ -18,7 +18,8 @@
    - cd pytorch3d && pip install -e .
  4. Finish
 ----------------------------------------------------------------------------------------------------------------------
-## install openpyxl "conda install openpyxl" we use for open excel file 
+## install openpyxl 
+ we use openpyxl for open excel file.  Install with this command "conda install openpyxl" and y for confirm install
 ----------------------------------------------------------------------------------------------------------------------
 ## How to use this project?
  1. Clone this github "git clone https://github.com/MeenTers/VDAS_Project.git"
