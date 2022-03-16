@@ -17,3 +17,10 @@
    - git clone https://github.com/facebookresearch/pytorch3d.git
    - cd pytorch3d && pip install -e .
  4. Finish
+----------------------------------------------------------------------------------------------------------------------
+## How to use this project?
+ 1. Clone this github "git clone https://github.com/MeenTers/VDAS_Project.git"
+ 2. select path folder cd (your root) /VDAS_Project
+ 3. activate pytorch 3D "conda activate pytorch3d" 
+ 4. open webapplication "python webflask.py"
+ 5. now you can use that! 
