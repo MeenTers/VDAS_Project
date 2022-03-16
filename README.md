@@ -5,7 +5,7 @@
 
 ## Part 2 Compare 3D models
 ![Part2](https://user-images.githubusercontent.com/68935390/158545711-88e37e65-6837-44d2-9c79-a5c94ab0462b.PNG)
-
+---------------------------------------------------------------------------------------------------------------------
 ## setup pytorch 3D library
  1. Must have anaconda or miniconda
  2. Create an environment according to this order.
