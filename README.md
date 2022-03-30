@@ -21,7 +21,7 @@
 ----------------------------------------------------------------------------------------------------------------------
 ## install openpyxl 
 #### we use openpyxl for open excel file.  Install with this command: 
-     conda install openpyxl" and y for confirm install
+     conda install openpyxl
 ----------------------------------------------------------------------------------------------------------------------
 ## How to use this project?
  1. Clone this github:
